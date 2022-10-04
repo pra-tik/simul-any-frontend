@@ -3,6 +3,7 @@ import "../index.css";
 import Navbar from "./navbar";
 import Footbar from "./footer";
 import { Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const allScenarios = [
   '{"world":"Nerwork","Experiment": "IP","Exp_id": "1234","Description": "IP Addressing","subscribed":"true"}',
@@ -10,12 +11,20 @@ const allScenarios = [
 ];
 
 const Home = () => {
+  let navigate = useNavigate();
+
   return (
     <>
       <Navbar />
       <div style={{ padding: 10 }}>
         <Card style={{ width: "100%", padding: 10 }}>
-          Hello, {JSON.parse(localStorage.getItem("user")).name} !
+        Hello,{" "}
+          {localStorage.getItem("user") == undefined ? (
+            <>{navigate("/")}</>
+          ) : (
+            <>{JSON.parse(localStorage.getItem("user")).name
+            }</>
+          )}
           <br />
           <center>
             <div style={{ width: "50%" }} className="row">

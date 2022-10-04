@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Route, Link, BrowserRouter as Router, Routes } from 'react-router-dom'  
 import Home from './Components/Home'
+import Develop from './Components/Develop';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -13,7 +14,7 @@ root.render(
   <Routes>
       <Route path="/" element={<App />} />
       <Route path="/Home" element={<Home />} />
-      <Route path="/develop" element={<App />} />
+      <Route path="/develop" element={<Develop />} />
       </Routes>
 </Router>
 );  

@@ -24,6 +24,8 @@ function Navbar() {
   useEffect(() => {
     if (localStorage.getItem("user")) {
       navigate("/home");
+    }else{
+      navigate("/");
     }
   }, []);
 
